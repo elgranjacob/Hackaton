@@ -4,7 +4,7 @@
 Desarrollar un sistema web integral para la gestión de flotillas en la industrial automotriz y obtener la localizacion en tiempo real de dichas flotillas.
 
 ## Tecnologías a utilizar
-* **Backend:** FireBase
+* **Backend:** FireBase, JavaScript
 * **Frontend:** Css
 * **Framework:** bootstrap
 * **Base de Datos:** MySQL 
