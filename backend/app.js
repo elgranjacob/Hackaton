@@ -10,12 +10,16 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+if (!process.env.SESSION_SECRET) {
+    throw new Error('Falta SESSION_SECRET en el archivo .env');
+}
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
 
 app.use(session({
-    secret: 'secret',
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true
 }));
@@ -28,4 +32,4 @@ app.use('/', pageRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+});
